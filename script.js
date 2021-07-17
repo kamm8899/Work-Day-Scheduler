@@ -1,12 +1,13 @@
-var day = moment().format('MMMM Do YYYY, h:mm:ss a');
+var day = moment().add(3, "hours").format('MMMM Do YYYY, h:mm:ss a');
 console.log(day);
-
 //Display current Day in header 
 $('#currentDay').html(day);
 
 //hour
-var hour = moment().format("hh:mm:ss K");
+var hour = moment().add(3, "hours").format("hh:mm:ss K");
 console.log(hour);
+
+var currentTime= moment().add(3, "hours");
 
 
 
@@ -20,21 +21,39 @@ var saveTasks = function() {
   };
 
 //Check if the task is in the past
-var presentHour = function(hour){
-    var hour = moment().format("hh:mm:ss K");
+var presentHour = function(){
+    var hour = currentTime.format("hh:mm:ss K");
     console.log(hour);
 
     //get hour from day
-    $(hour).find("description").text().trim();
-
-    //remove any old classes from element
-    $(hour).removeClass(".bg-dark");
-//apply new class if its after current day
-    if (moment().isAfter(hour)){
-        $(hour).addClass(".bg-danger");
+    var checktime = $(".time-block").find(".hour");
+   // moment(checktime, "h A");
+    console.log(moment(checktime, "h A"));
+    for(i=0; i<checktime.length; i++){
+        
+        var hourString= checktime.eq(i).text().trim();
+        console.log(hourString);
+         var hourMoment= moment(hourString, "h A");
+        //apply new class if its after present hour
+    if (hourMoment.isSame(currentTime)){
+        //remove any old classes from element
+        
+    $(".time-block .col-md-10").eq(i).removeClass("bg-dark");
+    $(".time-block .col-md-10").eq(i).addClass("bg-danger");
     }
-    
+    else if (hourMoment.isAfter(currentTime)){
+        //remove any old classes from element
+        
+    $(".time-block .col-md-10").eq(i).removeClass("bg-dark");
+    $(".time-block .col-md-10").eq(i).addClass("bg-success");
+    }
+
+    }
+
+
+   
 }
+presentHour();
 //Future Hour
 
 
