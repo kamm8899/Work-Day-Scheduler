@@ -8,16 +8,29 @@ var hour = moment().format("hh:mm:ss K");
 console.log(hour);
 
 var currentTime= moment();
-
-$('.saveBtn').on("click", saveTask);
-
 //save button
-var saveTask = function() {
-    $(this).siblings(".description").val();
-   var task= localStorage.setItem("tasks", JSON.stringify(tasks));
+$('.saveBtn').on("click", function() {
+    console.log("message");
+    var tasks= $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time, tasks);
     
+  });
 
-  };
+//Get Local Storge
+
+$("#hour9AM .description").val(localStorage.getItem('hour9AM'));
+$("#hour8AM .description").val(localStorage.getItem('hour8AM'));
+$("#hour10AM .description").val(localStorage.getItem('hour10AM'));
+$("#hour11AM .description").val(localStorage.getItem('hour11AM'));
+$("#hour12PM .description").val(localStorage.getItem('hour12PM'));
+$("#hour1PM .description").val(localStorage.getItem('hour1PM'));
+$("#hour2PM .description").val(localStorage.getItem('hour2PM'));
+$("#hour3PM .description").val(localStorage.getItem('hour3PM'));
+$("#hour4PM .description").val(localStorage.getItem('hour4PM'));
+$("#hour5PM .description").val(localStorage.getItem('hour5PM'));
+$("#hour6PM .description").val(localStorage.getItem('hour6PM'));
+
 
 //Check if the task is in the past
 var presentHour = function(){
@@ -54,9 +67,3 @@ presentHour();
 
 
 
-
-
-//WHEN I click the save button for that time block
-//THEN the text for that event is saved in local storage
-//WHEN I refresh the page
-//THEN the saved events persist
