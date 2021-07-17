@@ -26,10 +26,10 @@ textarea{
 }
 
 .time-block{
-  text-align: center;
+  
   border-radius: 15px;
+  margin: 0 auto;
 }
-
 .row {
   white-space: pre-wrap;
   height: 80px;
@@ -40,6 +40,7 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  text-align: center;
 }
 
 .past {
@@ -68,5 +69,13 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+.col-md-1 {
+  padding: 20px;
+}
+#currentDay{
+
+  font-size: 30px;
+  color:rgb(24, 173, 241);
 }
 
