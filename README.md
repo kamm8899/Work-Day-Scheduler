@@ -7,7 +7,7 @@ During this Challenge I was able to get more comfortable with JQuery and Bootstr
 #Contributors
 No Student contribution was used during this challenge. I did get some assistance from the TA during Office Hours to fix my present future and past logic. 
 
-#Finished Layout of Scheduler
+# Finished Layout of Scheduler
 ![ScreenShot](/assets/Workday.png)
 
 # Deployed Webpage Location
