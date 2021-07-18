@@ -10,5 +10,5 @@ No Student contribution was used during this challenge. I did get some assistanc
 #Finished Layout of Scheduler
 ![ScreenShot](/assets/workday.png)
 
-# Repo Location
-https://github.com/kamm8899/Work-Day-Scheduler
+# Deployed Webpage Location
+https://kamm8899.github.io/Work-Day-Scheduler/
